@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="stable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+					<VBox fitContainer="true">			
+			<smartTable:SmartTable id="mySmartTable" entitySet="expensesSet"
+			 enableAutoBinding="true" 
+			 initiallyVisibleFields="Empid,Empfname,Emplname,Designation"
+			  tableType="Table" beforeRebindTable="changeColumnName"
+			  beforeExport="onBeforeExport" useVariantManagement="true"
+			   useTablePersonalisation="true" header="Line Items"
+			    showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" >
+				
+			</smartTable:SmartTable>
+		</VBox>
+					
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
